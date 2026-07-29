@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Екатерина — портфолио дизайнера</title>
+<meta name="description" content="Портфолио дизайнера: брендинг, UX/UI, полиграфия. Три учебных проекта — бренд «Осиль смолу», приложение «Медиалог», буклет для музея советских игровых автоматов.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root, [data-theme="light"] {
+  --color-bg: #f7f3ec;
+  --color-surface: #fbf9f5;
+  --color-surface-2: #fdfcfa;
+  --color-surface-offset: #f0eae0;
+  --color-surface-offset-2: #e8e0d3;
+  --color-divider: #ddd4c4;
+  --color-border: #d3c8b4;
+  --color-text: #2a2118;
+  --color-text-muted: #6f6455;
+  --color-text-faint: #a89c88;
+  --color-text-inverse: #fbf9f5;
+  --color-primary: #5c318a;
+  --color-primary-hover: #4a2670;
+  --color-primary-active: #3a1d58;
+  --color-primary-highlight: #e6dcf0;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1.25rem;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 3px oklch(0.2 0.02 60 / 0.08);
+  --shadow-md: 0 6px 20px oklch(0.2 0.02 60 / 0.10);
+  --shadow-lg: 0 20px 50px oklch(0.2 0.02 60 / 0.16);
+  --transition-interactive: 220ms cubic-bezier(0.16,1,0.3,1);
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --content-default: 1000px;
+  --content-wide: 1280px;
+  --space-4: 1rem; --space-8: 2rem; --space-12: 3rem; --space-16: 4rem; --space-24: 6rem; --space-32: 8rem;
+  --text-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.85rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.2vw, 0.95rem);
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+  --text-lg: clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem);
+  --text-xl: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem);
+  --text-2xl: clamp(2rem, 1.3rem + 2.6vw, 3.4rem);
+  --text-hero: clamp(2.6rem, 1rem + 6vw, 6.2rem);
+}
+[data-theme="dark"] {
+  --color-bg: #1b1712;
+  --color-surface: #211c16;
+  --color-surface-2: #262019;
+  --color-surface-offset: #2b241c;
+  --color-surface-offset-2: #332b21;
+  --color-divider: #3a3226;
+  --color-border: #453c2e;
+  --color-text: #ece4d6;
+  --color-text-muted: #ab9f8b;
+  --color-text-faint: #786c59;
+  --color-text-inverse: #211c16;
+  --color-primary: #b28ce0;
+  --color-primary-hover: #c7a6ec;
+  --color-primary-active: #d9c1f2;
+  --color-primary-highlight: #362a45;
+  --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.3);
+  --shadow-md: 0 6px 20px oklch(0 0 0 / 0.35);
+  --shadow-lg: 0 20px 50px oklch(0 0 0 / 0.5);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth;text-size-adjust:100%;scroll-padding-top:6rem;}
+body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg);transition:background var(--transition-interactive),color var(--transition-interactive);}
+img{display:block;max-width:100%;height:auto;}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1.1;text-wrap:balance;font-weight:500;}
+p,li{text-wrap:pretty;}
+a{color:inherit;text-decoration:none;}
+::selection{background:color-mix(in oklab, var(--color-primary) 30%, transparent);}
+:focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm);}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit;}
+header.site{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(12px);background:color-mix(in oklab, var(--color-bg) 82%, transparent);border-bottom:1px solid var(--color-divider);}
+.nav-inner{max-width:var(--content-wide);margin-inline:auto;padding:1rem clamp(1rem,4vw,2.5rem);display:flex;align-items:center;justify-content:space-between;}
+.logo-mark{display:flex;align-items:center;gap:.6rem;font-family:var(--font-display);font-size:1.15rem;font-weight:600;letter-spacing:-0.01em;}
+.logo-mark svg{width:28px;height:28px;color:var(--color-primary);}
+nav.links{display:flex;gap:2rem;align-items:center;}
+nav.links a{font-size:var(--text-sm);color:var(--color-text-muted);transition:color var(--transition-interactive);}
+nav.links a:hover{color:var(--color-primary);}
+.theme-toggle{width:38px;height:38px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;border:1px solid var(--color-border);color:var(--color-text);transition:border-color var(--transition-interactive),background var(--transition-interactive);}
+.theme-toggle:hover{background:var(--color-surface-offset);}
+.theme-toggle svg{width:18px;height:18px;}
+@media (max-width: 760px){ nav.links{display:none;} }
+.hero{padding:calc(6rem + var(--space-16)) 0 var(--space-16);}
+.hero-inner{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(1rem,4vw,2.5rem);display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:end;}
+.hero-eyebrow{font-size:var(--text-sm);color:var(--color-primary);text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:1rem;display:inline-block;}
+.hero h1{font-size:var(--text-hero);font-weight:400;letter-spacing:-0.02em;}
+.hero h1 em{font-style:italic;color:var(--color-primary);}
+.hero-sub{margin-top:1.5rem;font-size:var(--text-lg);color:var(--color-text-muted);max-width:38ch;}
+.hero-koda{display:flex;justify-content:center;align-items:flex-end;}
+.hero-koda img{max-width:230px;border-radius:50%;box-shadow:0 30px 40px oklch(0.2 0.02 60/0.18);animation:float 5s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@media (prefers-reduced-motion: reduce){.hero-koda img{animation:none;}}
+@media (max-width: 860px){ .hero-inner{grid-template-columns:1fr;} .hero-koda{order:-1;max-width:160px;margin-inline:auto;} }
+.section{padding-block:clamp(var(--space-16),8vw,var(--space-32));}
+.section-head{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(1rem,4vw,2.5rem);margin-bottom:clamp(2rem,5vw,3.5rem);}
+.section-num{font-size:var(--text-sm);color:var(--color-text-faint);font-weight:600;letter-spacing:.08em;}
+.section-head h2{font-size:var(--text-2xl);margin-top:.5rem;letter-spacing:-0.01em;}
+.section-head p{color:var(--color-text-muted);max-width:60ch;margin-top:1rem;font-size:var(--text-lg);}
+.case{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(1rem,4vw,2.5rem);}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;margin-bottom:clamp(2.5rem,6vw,4rem);}
+.case-grid.reverse .case-media{order:2;}
+.case-media{border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--color-surface-offset);}
+.case-media img{width:100%;}
+.case-tag{display:inline-block;font-size:var(--text-xs);background:var(--color-primary-highlight);color:var(--color-primary);padding:.35rem .8rem;border-radius:var(--radius-full);font-weight:600;letter-spacing:.03em;margin-bottom:1.2rem;}
+.case-text h3{font-size:var(--text-xl);margin-bottom:1rem;letter-spacing:-0.01em;}
+.case-text p{color:var(--color-text-muted);font-size:var(--text-base);max-width:52ch;}
+.case-text p + p{margin-top:1rem;}
+@media (max-width: 860px){ .case-grid, .case-grid.reverse{grid-template-columns:1fr;} .case-grid.reverse .case-media{order:0;} }
+.gallery-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.75rem,2vw,1.25rem);margin-top:clamp(2rem,4vw,3rem);max-width:900px;margin-inline:auto;}
+.gallery-strip img{border-radius:var(--radius-lg);box-shadow:var(--shadow-md);}
+@media (max-width: 700px){.gallery-strip{grid-template-columns:repeat(2,1fr);}}
+.color-swatches{display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;}
+.swatch{display:flex;align-items:center;gap:.5rem;font-size:var(--text-xs);color:var(--color-text-muted);}
+.swatch-dot{width:26px;height:26px;border-radius:var(--radius-full);border:1px solid var(--color-border);}
+.divider-full{margin-block:clamp(2rem,5vw,4rem);}
+.divider-full img{width:100%;border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);}
+.quote-block{background:var(--color-surface-offset);border-radius:var(--radius-xl);padding:clamp(1.5rem,4vw,3rem);margin-top:clamp(2rem,4vw,3rem);}
+.quote-block p{font-family:var(--font-display);font-size:var(--text-lg);font-style:italic;color:var(--color-text);max-width:60ch;}
+footer.site{border-top:1px solid var(--color-divider);padding-block:clamp(3rem,6vw,5rem);margin-top:clamp(3rem,6vw,5rem);}
+.footer-inner{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(1rem,4vw,2.5rem);display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap;}
+.footer-cta h2{font-size:var(--text-2xl);max-width:16ch;}
+.footer-links{display:flex;gap:2rem;flex-wrap:wrap;}
+.footer-links a{font-size:var(--text-sm);color:var(--color-text-muted);border-bottom:1px solid transparent;transition:border-color var(--transition-interactive),color var(--transition-interactive);}
+.footer-links a:hover{color:var(--color-primary);border-color:var(--color-primary);}
+.footer-bottom{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(1rem,4vw,2.5rem);margin-top:3rem;font-size:var(--text-xs);color:var(--color-text-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="nav-inner">
+    <a href="#top" class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3C7 3 3 7 3 12c0 3 1.5 5.5 4 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="9" r="2.4" fill="currentColor"/></svg>
+      <span>Екатерина</span>
+    </a>
+    <nav class="links" aria-label="Основная навигация">
+      <a href="#brand">Осиль смолу</a>
+      <a href="#app">Медиалог</a>
+      <a href="#booklet">Буклет музея</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <button class="theme-toggle" data-theme-toggle aria-label="Переключить тему">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="hero-eyebrow">Дизайн-портфолио</span>
+        <h1>Бренды, экраны<br>и <em>истории</em>,<br>которым верят</h1>
+        <p class="hero-sub">Три учебных проекта — от фирменного стиля студии эпоксидной смолы до мобильного приложения и игрового буклета для музея.</p>
+      </div>
+      <div class="hero-koda">
+        <img src="assets/koda.jpg" alt="Коала Коди, маскот портфолио" width="230" height="230" loading="lazy">
+      </div>
+    </div>
+  </section>
+  <section class="section" id="brand">
+    <div class="section-head reveal">
+      <span class="section-num">01 — Брендинг</span>
+      <h2>«Осиль смолу»</h2>
+      <p>Полноценная разработка бренда для студии эпоксидной смолы: имя, визуальный язык и коммуникация с аудиторией. Ключевым условием было обязательное слово «сила» в названии — так родилось имя «Осиль смолу».</p>
+    </div>
+    <div class="case">
+      <div class="case-grid reveal">
+        <div class="case-media">
+          <img src="assets/osil-header.jpg" alt="Логотип и заголовок бренда «Осиль смолу»" width="1080" height="330" loading="lazy">
+        </div>
+        <div class="case-text">
+          <span class="case-tag">Логотип и палитра</span>
+          <h3>Знак и цвет как основа идентичности</h3>
+          <p>Знак — спиралевидная форма, отсылающая к текучести смолы и к внутренней «силе», зашифрованной в названии. Мягкая, но уверенная форма считывается в любом масштабе.</p>
+          <div class="color-swatches">
+            <span class="swatch"><span class="swatch-dot" style="background:#e97ea1"></span>e97ea1</span>
+            <span class="swatch"><span class="swatch-dot" style="background:#fcf9e1"></span>fcf9e1</span>
+            <span class="swatch"><span class="swatch-dot" style="background:#5c318a"></span>5c318a</span>
+            <span class="swatch"><span class="swatch-dot" style="background:#3f1e4d"></span>3f1e4d</span>
+          </div>
+        </div>
+      </div>
+      <div class="case-grid reverse reveal">
+        <div class="case-media">
+          <img src="assets/osil-pattern.jpg" alt="Фирменный паттерн бренда «Осиль смолу»" width="1080" height="290" loading="lazy">
+        </div>
+        <div class="case-text">
+          <span class="case-tag">Паттерн</span>
+          <h3>Ритм спиралей как узнаваемый почерк</h3>
+          <p>Повторяющийся мотив логотипа превращается в фирменный паттерн — для упаковки, соцсетей и мерча. Он держит бренд собранным даже без текста.</p>
+        </div>
+      </div>
+      <div class="divider-full reveal">
+        <img src="assets/osil-mockups1.jpg" alt="Мокапы: футболка и бирка бренда «Осиль смолу»" width="1080" height="360" loading="lazy">
+      </div>
+      <div class="case-grid reveal">
+        <div class="case-media">
+          <img src="assets/osil-storefront.jpg" alt="Вывеска и витрина студии «Осиль смолу»" width="1080" height="340" loading="lazy">
+        </div>
+        <div class="case-text">
+          <span class="case-tag">Точки контакта</span>
+          <h3>Бренд в физическом пространстве</h3>
+          <p>Вывеска, витрина, оформление входа — фиолетовый акцент делает студию заметной на любой улице, а мягкий шрифт логотипа сохраняет тёплый, «ручной» характер бренда.</p>
+        </div>
+      </div>
+      <div class="divider-full reveal">
+        <img src="assets/osil-cards.jpg" alt="Открытки, визитки и упаковочная бумага бренда" width="1080" height="850" loading="lazy">
+      </div>
+      <div class="case-grid reverse reveal">
+        <div class="case-media">
+          <img src="assets/osil-apron.jpg" alt="Фартуки и наклейки бренда «Осиль смолу»" width="1080" height="618" loading="lazy">
+        </div>
+        <div class="case-text">
+          <span class="case-tag">Мерч</span>
+          <h3>От студии до повседневных вещей</h3>
+          <p>Рабочие фартуки, стикеры для гаджетов — фирменный стиль масштабируется на любые носители, оставаясь целостным. Результат — один из самых успешных проектов в моей практике.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="app" style="background:var(--color-surface);">
+    <div class="section-head reveal">
+      <span class="section-num">02 — UX/UI</span>
+      <h2>«Медиалог»</h2>
+      <p>Концепт мобильного приложения для сохранения впечатлений от фильмов, книг и других форматов контента. Идея выросла из личной проблемы — забывать название фильма, который смотрел пару дней назад, или книги, прочитанной год назад.</p>
+    </div>
+    <div class="case">
+      <div class="case-grid reveal">
+        <div class="case-text">
+          <span class="case-tag">Главный экран</span>
+          <h3>Привычка фиксировать впечатления</h3>
+          <p>Еженедельные задания и персональные рекомендации мотивируют возвращаться в приложение каждый день, а кнопка «Создать воспоминание» — на первом экране, без лишних кликов.</p>
+        </div>
+        <div class="case-media" style="max-width:280px;">
+          <img src="assets/app-4.jpg" alt="Главный экран приложения «Медиалог»" width="407" height="844" loading="lazy">
+        </div>
+      </div>
+      <div class="gallery-strip reveal">
+        <img src="assets/app-5.jpg" alt="Экран «Воспоминания» с карточкой книги" width="407" height="844" loading="lazy">
+        <img src="assets/app-1.jpg" alt="Экран профиля пользователя" width="407" height="844" loading="lazy">
+        <img src="assets/app-3.jpg" alt="Экран «Друзья» с подборками книг" width="407" height="844" loading="lazy">
+        <img src="assets/app-2.jpg" alt="Экран каталога фильмов и книг" width="407" height="844" loading="lazy">
+      </div>
+      <div class="quote-block reveal">
+        <p>«Часто ли вы сталкиваетесь с тем, что не можете вспомнить, как назывался фильм, который смотрели пару дней назад? Я — часто. Поэтому разработала концепт приложения, в котором можно сохранить это надолго.»</p>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="booklet">
+    <div class="section-head reveal">
+      <span class="section-num">03 — Полиграфия</span>
+      <h2>Буклет музея советских игровых автоматов</h2>
+      <p>Необычная форма и игровая механика: буклет в виде матрёшки превращается в квест — пройдя игру «Найди советские артефакты», посетитель получает скидку на билет.</p>
+    </div>
+    <div class="case">
+      <div class="case-grid reveal">
+        <div class="case-media" style="max-width:340px;">
+          <img src="assets/buklet-3.jpg" alt="Обложка буклета в форме матрёшки с надписью «Сыграем?»" width="960" height="1280" loading="lazy">
+        </div>
+        <div class="case-text">
+          <span class="case-tag">Форма и механика</span>
+          <h3>Буклет как приглашение к игре</h3>
+          <p>Необычная вырубка в форме матрёшки сразу задаёт настроение — тёплое, советское, ностальгическое. Обложка не рассказывает о музее, а спрашивает: «Сыграем?»</p>
+        </div>
+      </div>
+      <div class="divider-full reveal">
+        <img src="assets/buklet-1.jpg" alt="Разворот буклета с игрой «Найди советские артефакты»" width="1521" height="1080" loading="lazy">
+      </div>
+      <div class="case-grid reverse reveal">
+        <div class="case-media">
+          <img src="assets/buklet-2.jpg" alt="Разворот буклета с ценами на билеты и приглашением в музей" width="1542" height="1080" loading="lazy">
+        </div>
+        <div class="case-text">
+          <span class="case-tag">Коммуникация с аудиторией</span>
+          <h3>От игры — к посещению музея</h3>
+          <p>После прохождения квеста внутри буклета читателя встречает финальный разворот: цены на билеты, расписание и приглашение прийти «за ностальгией» — игра плавно ведёт к конверсии.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site" id="contact">
+  <div class="footer-inner">
+    <div class="footer-cta">
+      <h2>Есть проект?<br>Обсудим.</h2>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:hello@example.com">hello@example.com</a>
+      <a href="#top">Наверх</a>
+      <a href="#brand">Осиль смолу</a>
+      <a href="#app">Медиалог</a>
+      <a href="#booklet">Буклет музея</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Екатерина. Портфолио дизайнера.</span>
+    <span>Три учебных проекта: брендинг, UX/UI, полиграфия</span>
+  </div>
+</footer>
+<script>
+(function(){
+  const t=document.querySelector('[data-theme-toggle]'), r=document.documentElement;
+  let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+  r.setAttribute('data-theme', d);
+  function setIcon(){
+    t.innerHTML = d==='dark'
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  }
+  setIcon();
+  t.addEventListener('click', ()=>{
+    d = d==='dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', d);
+    setIcon();
+  });
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, {threshold:0.12});
+  els.forEach(el=>io.observe(el));
+})();
+</script>
+</body>
+</html>
